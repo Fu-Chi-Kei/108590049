@@ -1,0 +1,60 @@
+<!-- HTML Lab Assignment 5 -->
+<!-- Deadline: 2022-11-09 23:59 -->
+
+<!-- [10%] 1. A Table (3x3 cells) with two different background colors for <th> and <td> -->
+<!-- [20%] 2. Two buttons to control the width of the table (200px, 500 px) -->
+<!-- [20%] 3. Three buttons to control the border with and cell spacing of the table -->
+<!-- [20%] 4. Four buttons to control the background color of the table (will not affect the color of table headings)-->
+<!-- [20%] 5. A reset button to reset the style to the original.-->
+<!-- [10%] 6. Separate the JavaScript code from the html file and upload both files to github. (javascript in an external file) -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <!-- Write your Html code here -->
+    <table class="center" border="1" id="mytable">
+      <tr style="background-color:#3481b3; color:white">
+        <th>Math</th>
+        <th>English</th>
+        <th>Programminng</th>
+      </tr>
+      <tr>
+        <td>90</td>
+        <td>60</td>
+        <td>80</td>
+      </tr>
+      <tr>
+        <td>80</td>
+        <td>86</td>
+        <td>98</td>
+      </tr>
+    </table>
+
+    <p>Change the Table Width</p>
+    <button type="button" onclick="changeWidth200px()">200px</button>
+    <button type="button" onclick="changeWidth500px()">500px</button>
+
+    <p>Change the Border and the Spacing Width</p>
+    <button type="button" onclick="changeBorder1px()">1px</button>
+    <button type="button" onclick="changeBorder10px()">10px</button>
+    <button type="button" onclick="changeBorder20px()">20px</button>
+
+    <p>Change the Table Color</p>
+    <button class="button1" type="button" onclick="changeColorgreen()"></button>
+    <button class="button2"type="button" onclick="changeColoryellow()"></button>
+    <button class="button3"type="button" onclick="changeColorpurple()"></button>
+    <button class="button4"type="button" onclick="changeColororange()"></button>
+
+    <br>
+    <br>
+    <button type="button" onclick="reset()">Reset</button>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+/*write your style here*/
+.button1 {
+  background-color: #79FF79;
+  padding: 8px 16px;
+}
+.button2 {
+  background-color: #fef670;
+  padding: 8px 16px;
+}
+.button3 {
+  background-color: #DCB5FF;
+  padding: 8px 16px;
+}
+.button4 {
+  background-color: #FFD1A4;
+  padding: 8px 16px;
+}
+
+.center {
+ text-align: center
+}
