@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="mystyle.css">
+</head>
+    <body>
+    <div class="content">
+		<div class="">
+			<h1>Practice</h1>
+			<table style="width:100%">
+			  <tr>
+				<th style="background-color: #93FF93">Time</th>
+			    <th style="background-color: #93FF93">Mon</th>
+			    <th style="background-color: #93FF93">Tue</th>
+				<th style="background-color: #93FF93">Wed</th>
+			  </tr>
+			  <tr>
+			    <th>7:30 AM</th>
+				<td style="background-color: #FFC78E">Breakfast</td>
+				<td style="background-color: #FFC78E">Breakfast</td>
+				<td style="background-color: #FFC78E">Breakfast</td>
+			  </tr>
+			  <tr>
+			    <th>8:00 AM</th>
+				<td rowspan="2" style="background-color: yellow">Business: Leture<br> Bidg B, Rm 256</td>
+				<td rowspan="3" style="background-color: lightblue">physics: Lab<br> Bidg J, Rm 309</td>
+				<td rowspan="2" style="background-color: yellow">Business: Leture<br> Bidg B, Rm 256</td>
+			  </tr>
+			  <tr>
+			    <th>8:30 AM</th>
+			  </tr>
+			  <tr>
+			    <th>9:00 AM</th>
+				<td rowspan="2" style="background-color: pink">Applied Meth<br> Bidg H, Rm 100</td>
+				<td rowspan="2" style="background-color: pink">Applied Meth<br> Bidg H, Rm 100</td>
+			  </tr>
+			  <tr>
+			    <th>9:30 AM</th>
+				<td></td>
+			  </tr>
+			  <tr>
+			    <th>10:00 AM</th>
+				<td></td>
+				<td></td>
+				<td></td>
+			  </tr>
+			  <tr>
+			    <th>10:30 AM</th>
+				<td></td>
+				<td></td>
+				<td></td>
+			  </tr>
+			  <tr>
+			    <th>11:00 AM</th>
+				<td></td>
+				<td></td>
+				<td></td>
+			 </tr>
+			 <tr>
+			    <th>11:30 AM</th>
+				<td></td>
+				<td></td>
+				<td></td>
+			 </tr>
+			</table>
+			<hr>
+		</div>
+
+        <hr>
+        <h1>99乘法表</h1>
+        <table border="1">
+        <script language="JavaScript">
+        var i, j;
+        for (i=1;i<=9;i++){
+            document.write("<tr>");
+            j = 1;
+            while (j <= 9){
+                document.write("<td>");
+                document.write(i + "*" + j + "=" + i*j);
+                document.write("</td>");
+                j++;
+            }
+            document.write("<tr>");
+        }
+        </script>
+        </table>
+        <hr>
+
+        <script>
+        document.write("<table border=0>");
+        for(j = 1; j < 10; j++){
+            document.write("<tr>");
+            for(i = 2; i < 10; i++){
+                var tmp = i * j;
+                document.write("<td style = width:80px;>" + i + "*" + j + "=" + tmp + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+        </script>
+
+    </div>
+
+    </body>
+</html>

@@ -1,0 +1,24 @@
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: navy;
+  margin-left: 20px;
+}
+
+body{
+    align-content: center;
+}
+div.content{
+    overflow: auto;
+    border: 3px;
+    right: both;
+}
+table, th, td {
+  border: 1px solid white;
+}
+
+tr:nth-child(even) {
+  background-color: #D2A2CC;
+}
