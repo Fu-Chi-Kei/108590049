@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style>
+canvas {
+    border:1px solid #d3d3d3;
+    background-color: #f1f1f1;
+}
+</style>
+</head>
+<body onload="startGame()">
+    <br>
+    <button onclick="start()">Start</button>
+    <button onclick="stop()">Stop</button>
+    <button onclick="reset()">Reset</button>
+
+<script>
+
+var myGamePiece;
+
+function startGame() {
+    myGameArea.start();
+    redGamePiece = new component(75, 75, "red", 30, 10);
+    yellowGamePiece = new component(75, 75, "yellow", 30, 90);
+    blueGamePiece = new component(75, 75, "blue", 30, 180);
+}
+
+var myGameArea = {
+    canvas : document.createElement("canvas"),
+    start : function() {
+        this.canvas.width = 480;
+        this.canvas.height = 270;
+        this.context = this.canvas.getContext("2d");
+        document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+        this.interval = setInterval(updateGameArea, 20);
+    },
+    clear: function() {
+     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+}
+
+function component(width, height, color, x, y) {
+    this.width = width;
+    this.height = height;
+    this.x = x;
+    this.y = y;
+    this.xDirection = 0;
+    this.yDirection = 0;
+    this.tempx = false;
+    this.tempy = false;
+    this.update = function() {
+     ctx = myGameArea.context;
+       ctx.fillStyle = color;
+       ctx.fillRect(this.x, this.y, this.width, this.height);
+    }
+}
+
+function updateGameArea() {
+  myGameArea.clear();
+
+  if (redGamePiece.x >= (myGameArea.canvas.width - redGamePiece.width) || redGamePiece.x <= 0){
+      redGamePiece.xDirection = -redGamePiece.xDirection;
+      redGamePiece.tempx = true;
+  }
+
+  if (redGamePiece.y >= (myGameArea.canvas.height - redGamePiece.height) || redGamePiece.y <= 0){
+      redGamePiece.yDirection = -redGamePiece.yDirection;
+      redGamePiece.tempy = true;
+  }
+
+  if (yellowGamePiece.x >= (myGameArea.canvas.width - yellowGamePiece.width) || yellowGamePiece.x <= 0){
+      yellowGamePiece.xDirection = -yellowGamePiece.xDirection;
+      yellowGamePiece.tempx = true;
+  }
+
+  if (yellowGamePiece.y >= (myGameArea.canvas.height - yellowGamePiece.height) || yellowGamePiece.y <= 0){
+      yellowGamePiece.yDirection = -yellowGamePiece.yDirection;
+      yellowGamePiece.tempy = true;
+  }
+
+  if (blueGamePiece.x >= (myGameArea.canvas.width - blueGamePiece.width) || blueGamePiece.x <= 0){
+      blueGamePiece.xDirection = -blueGamePiece.xDirection;
+      blueGamePiece.tempx = true;
+  }
+
+  if (blueGamePiece.y >= (myGameArea.canvas.height - blueGamePiece.height) || blueGamePiece.y <= 0){
+      blueGamePiece.yDirection = -blueGamePiece.yDirection;
+      blueGamePiece.tempy = true;
+  }
+
+  redGamePiece.x += (2 * redGamePiece.xDirection);
+  yellowGamePiece.x += (2 * yellowGamePiece.xDirection);
+  yellowGamePiece.y += (2 * yellowGamePiece.yDirection);
+  blueGamePiece.x += (2 * blueGamePiece.xDirection);
+  blueGamePiece.y += (2 * blueGamePiece.yDirection);
+
+  redGamePiece.update();
+  yellowGamePiece.update();
+  blueGamePiece.update();
+}
+
+function start() {
+    if(redGamePiece.tempx){
+        redGamePiece.xDirection = -1;
+    }
+    else{
+        redGamePiece.xDirection = 1;
+    }
+    if(redGamePiece.tempy){
+        redGamePiece.yDirection = -1;
+    }
+    else{
+        redGamePiece.yDirection = 1;
+    }
+
+    if(yellowGamePiece.tempx){
+        yellowGamePiece.xDirection = -1;
+    }
+    else{
+        yellowGamePiece.xDirection = 1;
+    }
+    if(yellowGamePiece.tempy){
+        yellowGamePiece.yDirection = -1;
+    }
+    else{
+        yellowGamePiece.yDirection = 1;
+    }
+
+    if(blueGamePiece.tempx){
+        blueGamePiece.xDirection = -1;
+    }
+    else{
+        blueGamePiece.xDirection = 1;
+    }
+    if(blueGamePiece.tempy){
+        blueGamePiece.yDirection = -1;
+    }
+    else{
+        blueGamePiece.yDirection = 1;
+    }
+}
+
+function stop() {
+    redGamePiece.xDirection = 0;
+    redGamePiece.yDirection = 0;
+    yellowGamePiece.xDirection = 0;
+    yellowGamePiece.yDirection = 0;
+    blueGamePiece.xDirection = 0;
+    blueGamePiece.yDirection = 0;
+}
+
+function reset(){
+    redGamePiece.x = 30
+    yellowGamePiece.x = 30
+    yellowGamePiece.y = 100
+    blueGamePiece.x = 30
+    blueGamePiece.y = 180
+
+    redGamePiece.xDirection = 0;
+    redGamePiece.yDirection = 0;
+    yellowGamePiece.xDirection = 0;
+    yellowGamePiece.yDirection = 0;
+    blueGamePiece.xDirection = 0;
+    blueGamePiece.yDirection = 0;
+
+    redGamePiece.tempx = false;
+    redGamePiece.tempy = false;
+    yellowGamePiece.tempx = false;
+    yellowGamePiece.tempy = false;
+    blueGamePiece.tempx = false;
+    blueGamePiece.tempy = false;
+}
+
+</script>
+</body>
+</html>

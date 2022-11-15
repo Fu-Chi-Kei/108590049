@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div class="content">
+		<div class="">
+			<canvas id="myCanvas" width="400" height="200" style="border:1px solid #d3d3d3;">
+				Your browser does not support the HTML canvas tag.</canvas>
+
+        </div>
+    </div>
+
+	<script>
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+
+	var grd = ctx.createLinearGradient(0, 0, 140, 0);
+	grd.addColorStop(1, "red");
+	grd.addColorStop(0, "white");
+	ctx.fillStyle = grd;
+	ctx.fillRect(0, 0, 200, 100);
+
+	var grd = ctx.createLinearGradient(0, 0, 300, 0);
+	grd.addColorStop(0, "rgba(0, 0, 255, 0.8)");
+	grd.addColorStop(1, "rgba(255, 255, 255, 0.8)");
+	ctx.fillStyle = grd;
+	ctx.fillRect(100, 50, 200, 100);
+
+	ctx.lineWidth = 10;
+	ctx.strokeStyle = "#376b4d"
+	ctx.moveTo(0, 110);
+	ctx.lineTo(90, 110);
+	ctx.lineTo(90, 160);
+	ctx.lineTo(300, 160);
+	ctx.stroke();
+
+	ctx.font = "26px Arial";
+	ctx.fillStyle = "#fcba03";
+	ctx.fillText("Overlap",105, 85);
+
+	ctx.beginPath();
+	ctx.lineWidth = 5;
+	ctx.strokeStyle = "rgb(230, 157, 191)";
+	ctx.arc(300,50,10,1*Math.PI,0.5*Math.PI);
+	ctx.stroke();
+
+
+
+
+	</script>
+    </body>
+</html>
